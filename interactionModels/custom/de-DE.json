@@ -1,0 +1,57 @@
+{
+  "interactionModel": {
+    "languageModel": {
+      "invocationName": "deutsche artikel",
+      "intents": [
+        {
+          "name": "AMAZON.CancelIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.HelpIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.StopIntent",
+          "samples": [
+            "Nein danke",
+            "Genug",
+            "Nein"
+          ]
+        },
+        {
+          "name": "AMAZON.NavigateHomeIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.FallbackIntent",
+          "samples": []
+        },
+        {
+          "name": "WordIntent",
+          "slots": [
+            {
+              "name": "word",
+              "type": "AMAZON.Person"
+            }
+          ],
+          "samples": [
+            "Wort {word}",
+            "nach Wort {word}",
+            "das Wort {word}",
+            "nach dem Wort {word}",
+            "nach {word}",
+            "{word}",
+            "Artikel {word}",
+            "Deutsche Artikel zum Wort {word}",
+            "Artikel Wort {word}",
+            "Artikel zum Wort {word}",
+            "Welcher Artikel hat das Wort {word}"
+          ]
+        }
+      ],
+      "types": []
+    }
+  },
+  "version": "15"
+}

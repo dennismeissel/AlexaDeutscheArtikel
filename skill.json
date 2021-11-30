@@ -1,0 +1,76 @@
+{
+  "manifest": {
+    "publishingInformation": {
+      "locales": {
+        "de-DE": {
+          "summary": "Artikel für deutsche Wörter finden",
+          "examplePhrases": [
+            "Alexa frage Deutsche Artikel nach dem Wort Katze",
+            "Hund"
+          ],
+          "keywords": [
+            "deutsche",
+            "artikel",
+            "der",
+            "die",
+            "das",
+            "german",
+            "article"
+          ],
+          "name": "Deutsche Artikel",
+          "description": "Mit diesem Skill kann man herausfinden, welchen Artikel ein Wort hat (Der/Die/Das).",
+          "smallIconUri": "file://assets/images/de-DE_smallIconUri.png",
+          "largeIconUri": "file://assets/images/de-DE_largeIconUri.png"
+        }
+      },
+      "automaticDistribution": {
+        "isActive": false
+      },
+      "isAvailableWorldwide": false,
+      "testingInstructions": "Alexa starte Deutsche Artikel\nKatze",
+      "category": "EDUCATION_AND_REFERENCE",
+      "distributionMode": "PUBLIC",
+      "distributionCountries": [
+        "DE",
+        "CH",
+        "AT"
+      ]
+    },
+    "apis": {
+      "custom": {
+        "endpoint": {
+          "uri": "arn:aws:lambda:us-east-1:231240359639:function:df99201d-e3d8-4892-8dd0-7ea97949d46f:Release_0"
+        },
+        "interfaces": [],
+        "regions": {
+          "EU": {
+            "endpoint": {
+              "uri": "arn:aws:lambda:eu-west-1:231240359639:function:df99201d-e3d8-4892-8dd0-7ea97949d46f:Release_0"
+            }
+          },
+          "NA": {
+            "endpoint": {
+              "uri": "arn:aws:lambda:us-east-1:231240359639:function:df99201d-e3d8-4892-8dd0-7ea97949d46f:Release_0"
+            }
+          },
+          "FE": {
+            "endpoint": {
+              "uri": "arn:aws:lambda:us-west-2:231240359639:function:df99201d-e3d8-4892-8dd0-7ea97949d46f:Release_0"
+            }
+          }
+        }
+      }
+    },
+    "manifestVersion": "1.0",
+    "privacyAndCompliance": {
+      "allowsPurchases": false,
+      "locales": {
+        "de-DE": {}
+      },
+      "containsAds": false,
+      "isExportCompliant": true,
+      "isChildDirected": false,
+      "usesPersonalInfo": false
+    }
+  }
+}
