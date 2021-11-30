@@ -1,6 +1,7 @@
+![alt text](assets/images/de-DE_smallIconUri.png "Title")
 # Alexa Skill Deutsche Artikel
 
-![alt text](assets/images/de-DE_smallIconUri.png "Title")
+
 
 ## Verwenden von Skill:
 
