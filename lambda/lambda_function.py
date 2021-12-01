@@ -63,12 +63,31 @@ class WordIntentHandler(AbstractRequestHandler):
         )
 
 
-class CancelOrStopIntentHandler(AbstractRequestHandler):
+class HelpIntentHandler(AbstractRequestHandler):
+    """Handler for Help Intent."""
+    def can_handle(self, handler_input):
+        # type: (HandlerInput) -> bool
+        return ask_utils.is_intent_name("AMAZON.HelpIntent")(handler_input)
+
+    def handle(self, handler_input):
+        # type: (HandlerInput) -> Response
+        speak_output = "Mit diesem Skill können Sie den Artikel zu einem deutschen Wort finden." + frage
+
+        return (
+            handler_input.response_builder
+                .speak(speak_output)
+                .ask(speak_output)
+                .response
+        )
+
+
+class CancelOrStopOrNoIntentHandler(AbstractRequestHandler):
     """Single handler for Cancel and Stop Intent."""
     def can_handle(self, handler_input):
         # type: (HandlerInput) -> bool
         return (ask_utils.is_intent_name("AMAZON.CancelIntent")(handler_input) or
-                ask_utils.is_intent_name("AMAZON.StopIntent")(handler_input))
+                ask_utils.is_intent_name("AMAZON.StopIntent")(handler_input) or
+                ask_utils.is_intent_name("AMAZON.NoIntent")(handler_input))
 
     def handle(self, handler_input):
         # type: (HandlerInput) -> Response
@@ -145,7 +164,7 @@ class CatchAllExceptionHandler(AbstractExceptionHandler):
         # type: (HandlerInput, Exception) -> Response
         logger.error(exception, exc_info=True)
 
-        speak_output = "Tut mir leid, ein Fehler ist aufgetreten. Bitte versuchen Sie es erneut."
+        speak_output = "Tut mir leid, ein Fehler ist aufgetreten. Bitte versuchen Sie es erneut." + frage
         # speak_output = str(exception)
 
         return (
@@ -164,7 +183,8 @@ sb = SkillBuilder()
 
 sb.add_request_handler(LaunchRequestHandler())
 sb.add_request_handler(WordIntentHandler())
-sb.add_request_handler(CancelOrStopIntentHandler())
+sb.add_request_handler(CancelOrStopOrNoIntentHandler())
+sb.add_request_handler(HelpIntentHandler())
 sb.add_request_handler(FallbackIntentHandler())
 sb.add_request_handler(SessionEndedRequestHandler())
 # sb.add_request_handler(IntentReflectorHandler()) # make sure IntentReflectorHandler is last so it doesn't override your custom intent handlers

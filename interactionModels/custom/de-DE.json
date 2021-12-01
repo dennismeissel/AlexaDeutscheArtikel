@@ -13,11 +13,7 @@
         },
         {
           "name": "AMAZON.StopIntent",
-          "samples": [
-            "Nein danke",
-            "Genug",
-            "Nein"
-          ]
+          "samples": []
         },
         {
           "name": "AMAZON.NavigateHomeIntent",
@@ -32,7 +28,7 @@
           "slots": [
             {
               "name": "word",
-              "type": "AMAZON.Person"
+              "type": "AMAZON.SearchQuery"
             }
           ],
           "samples": [
@@ -41,17 +37,21 @@
             "das Wort {word}",
             "nach dem Wort {word}",
             "nach {word}",
-            "{word}",
+            " {word}",
             "Artikel {word}",
             "Deutsche Artikel zum Wort {word}",
             "Artikel Wort {word}",
             "Artikel zum Wort {word}",
             "Welcher Artikel hat das Wort {word}"
           ]
+        },
+        {
+          "name": "AMAZON.NoIntent",
+          "samples": []
         }
       ],
       "types": []
     }
   },
-  "version": "15"
+  "version": "18"
 }
